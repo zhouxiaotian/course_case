@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>前端零基础弟子班</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            background: #F4F4F4;
+        }
+
+        .box {
+            position: relative;
+            box-sizing: border-box;
+            margin: 20px auto;
+            width: 240px;
+            height: 240px;
+            background: #FFF;
+            overflow: hidden;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box .desc {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 999;
+            box-sizing: border-box;
+            padding: 10px 15px 0px;
+            width: 100%;
+            height: 110px;
+            font-size: 12px;
+            color: #FFF;
+            line-height: 20px;
+            background: rgba(0, 0, 0, .5);
+            /* 多行裁切 */
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            overflow: hidden;
+        }
+
+        /* 动画效果的实现 */
+        .box img {
+            transition: .3s;
+        }
+
+        .box:hover img {
+            transform: scale(1.2);
+        }
+
+        .box .desc {
+            transform: translateY(110px);
+            transition: transform .3s linear;
+        }
+
+        .box:hover .desc {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="image/taile.jpeg" alt="">
+        <p class="desc">
+            泰勒·斯威夫特（Taylor Swift），1989年12月13日出生于美国宾夕法尼亚州，美国女歌手、词曲作者、音乐制作人、演员。2006年，发行个人首张音乐专辑《Taylor
+            Swift》。2008年，她的音乐专辑《Fearless》共计11周登上美国公告牌200强专辑榜的冠军位置，并获得第52届格莱美奖“年度专辑奖”
+        </p>
+    </div>
+</body>
+
+</html>

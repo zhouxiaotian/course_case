@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>前端零基础弟子班</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            background: #F4F4F4;
+        }
+
+        .box {
+            box-sizing: border-box;
+            margin: 20px auto;
+            width: 50px;
+            height: 50px;
+            background: #FFF;
+            overflow: hidden;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .box .icon {
+            width: 50px;
+            height: 50px;
+            background: url('image/edit.png') no-repeat center;
+            background-size: 70% 70%;
+            /* 左侧不允许缩小 */
+            flex-shrink: 0;
+        }
+
+        .box .text {
+            position: relative;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 16px;
+            letter-spacing: 5px;
+            overflow: hidden;
+            /* 占据剩余空间 */
+            flex-grow: 1;
+        }
+
+        .box .text::after {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #F56C6C;
+            overflow: hidden;
+        }
+
+        /* 动画处理 */
+        .box {
+            transition: .5s;
+        }
+
+        .box .text::after {
+            transition: .3s .5s;
+        }
+
+        .box:hover {
+            width: 150px;
+        }
+
+        .box:hover .text::after {
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <i class="icon"></i>
+        <span class="text">编辑</span>
+    </div>
+</body>
+
+</html>
