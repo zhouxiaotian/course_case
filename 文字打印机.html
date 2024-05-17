@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>前端零基础弟子班</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <style>
+        @keyframes textMove {
+            0% {
+                width: 0;
+            }
+        }
+
+        @keyframes borderMove {
+            50% {
+                border-right-color: transparent;
+            }
+        }
+
+        .box {
+            box-sizing: border-box;
+            margin: 50px;
+            width: 8em;
+            height: 30px;
+            line-height: 28px;
+            color: #409EFF;
+            font-size: 18px;
+            border-right: 1px solid #555;
+            white-space: nowrap;
+            overflow: hidden;
+            animation:
+                textMove 3s steps(8) both,
+                borderMove .5s infinite both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        欢迎大家学习前端
+    </div>
+</body>
+
+</html>
