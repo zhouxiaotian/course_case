@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>前端零基础弟子班</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            background: url('image/xiyouji.webp') no-repeat center;
+            background-size: cover;
+        }
+
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 700px;
+            height: 240px;
+        }
+
+        .box div {
+            float: left;
+            width: 25%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position-y: center;
+        }
+
+        .box div.wukong {
+            background-image: url('./image/sunwukong.webp');
+            animation: sunwukong 1s steps(8) infinite;
+        }
+
+        .box div.tangseng {
+            background-image: url('./image/tangseng.webp');
+            animation: tangseng 1s steps(8) infinite;
+        }
+
+        .box div.bajie {
+            background-image: url('./image/zhubajie.webp');
+            animation: zhubajie 1s steps(8) infinite;
+        }
+
+        .box div.shaseng {
+            background-image: url('./image/shaseng.webp');
+            animation: shaseng 1s steps(8) infinite;
+        }
+
+        @keyframes sunwukong {
+            100% {
+                background-position-x: -1600px;
+            }
+        }
+
+        @keyframes tangseng {
+            100% {
+                background-position-x: -1360px;
+            }
+        }
+
+        @keyframes zhubajie {
+            100% {
+                background-position-x: -1600px;
+            }
+        }
+
+        @keyframes shaseng {
+            100% {
+                background-position-x: -1680px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="wukong"></div>
+        <div class="tangseng"></div>
+        <div class="bajie"></div>
+        <div class="shaseng"></div>
+    </div>
+</body>
+
+</html>

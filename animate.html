@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>前端零基础弟子班</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <style>
+        .playBox {
+            margin: 50px;
+            box-sizing: border-box;
+            padding: 10px;
+            width: 80px;
+            border: 1px solid #DDD;
+            border-radius: 5px;
+        }
+
+        .playBox span {
+            display: block;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .playBox .icon {
+            display: block;
+            margin: 0 auto;
+            width: 50px;
+            height: 50px;
+            background: url('./image/play.png') no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .playBox:hover {
+            border-color: #409EFF;
+        }
+
+        .playBox:hover span {
+            color: #409EFF;
+        }
+
+        .playBox:hover .icon {
+            background: url('./image/playHover.png') no-repeat;
+            background-size: 100% 100%;
+            transform-origin: center bottom;
+            animation: bounce 1s infinite both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="playBox">
+        <i class="icon"></i>
+        <span>视频中心</span>
+    </div>
+</body>
+
+</html>
