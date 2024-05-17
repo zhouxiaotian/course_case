@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>前端零基础弟子班</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <style>
+        @keyframes musicMove {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            box-sizing: border-box;
+            width: 60px;
+            height: 60px;
+            background: url('image/music.png') no-repeat;
+            background-size: 100% 100%;
+            cursor: pointer;
+            /* 动画播放 */
+            animation: musicMove 1s linear infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        let box = document.querySelector('.box')
+        box.onclick = function () {
+            // 获取盒子当前运动的状态
+            let state = getComputedStyle(box).animationPlayState
+            // 根据当前状态控制动画的播放
+            if (state === 'running') {
+                box.style.animationPlayState = 'paused'
+            } else {
+                box.style.animationPlayState = 'running'
+            }
+        }
+    </script>
+</body>
+
+</html>

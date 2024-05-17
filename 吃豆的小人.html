@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>前端零基础弟子班</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <style>
+        .loading {
+            position: relative;
+            box-sizing: border-box;
+            margin: 50px;
+            width: 140px;
+            height: 64px;
+        }
+
+        .loading .face {
+            position: relative;
+            width: 64px;
+            height: 64px;
+        }
+
+        .loading .face::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            z-index: 10;
+            margin-left: -3px;
+            width: 6px;
+            height: 6px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .loading .face .mouth {
+            position: absolute;
+            width: 0;
+            height: 0;
+            font-size: 0;
+            border: 32px solid #F56C6C;
+            border-right-color: transparent;
+            border-radius: 50%;
+        }
+
+        .loading .face .mouth:nth-of-type(1) {
+            animation: mouth1Move .5s linear infinite;
+        }
+
+        .loading .face .mouth:nth-of-type(2) {
+            animation: mouth2Move .5s linear infinite;
+        }
+
+        @keyframes mouth1Move {
+
+            from,
+            to {
+                transform: rotate(270deg);
+            }
+
+            50% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes mouth2Move {
+
+            from,
+            to {
+                transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(0);
+            }
+        }
+
+        .loading .bean {
+            position: absolute;
+            top: 50%;
+            margin-top: -5px;
+            width: 10px;
+            height: 10px;
+            background-color: #F56C6C;
+            border-radius: 50%;
+            /* 播放动画 */
+            animation: beanMove .3s linear infinite;
+        }
+
+        .loading .bean.bean1 {
+            left: 80px;
+        }
+
+        .loading .bean.bean2 {
+            left: 120px;
+        }
+
+        @keyframes beanMove {
+            100% {
+                transform: translateX(-40px);
+                opacity: .7;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading">
+        <div class="face">
+            <div class="mouth"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="bean bean1"></div>
+        <div class="bean bean2"></div>
+    </div>
+</body>
+
+</html>
