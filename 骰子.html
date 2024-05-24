@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端零基础弟子班</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <style>
+        .stage {
+            margin: 100px auto;
+            width: 500px;
+            height: 500px;
+            perspective: 1000px;
+        }
+
+        .stage .cube {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -100px 0 0 -100px;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(30deg);
+            transition: 5s linear;
+        }
+
+        .stage .cube li {
+            position: absolute;
+            box-sizing: border-box;
+            padding: 22px;
+            width: 100%;
+            height: 100%;
+            background: #FFF;
+            border: 1px solid #409EFF;
+            display: flex;
+        }
+
+        .stage .cube li span {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, .8);
+        }
+
+        /* 正面：1 */
+        .stage .cube li:nth-child(1) {
+            transform: translateZ(100px) rotateY(0deg);
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 反面：6 */
+        .stage .cube li:nth-child(2) {
+            transform: translateZ(-100px) rotateY(-180deg);
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-between;
+            justify-content: space-between;
+        }
+
+        /* 左面：2 */
+        .stage .cube li:nth-child(3) {
+            transform: translateX(-100px) rotateY(-90deg);
+            justify-content: space-between;
+        }
+
+        .stage .cube li:nth-child(3) span:nth-child(2) {
+            align-self: flex-end;
+        }
+
+        /* 右面：5 */
+        .stage .cube li:nth-child(4) {
+            transform: translateX(100px) rotateY(90deg);
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .stage .cube li:nth-child(4) .col {
+            display: flex;
+            flex-basis: 100%;
+            justify-content: space-between;
+        }
+
+        .stage .cube li:nth-child(4) .col:nth-child(2) {
+            justify-content: center;
+        }
+
+        /* 上面：4 */
+        .stage .cube li:nth-child(5) {
+            transform: translateY(-100px) rotateX(90deg);
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .stage .cube li:nth-child(5) .col {
+            display: flex;
+            flex-basis: 100%;
+            justify-content: space-between;
+        }
+
+        /* 上面：3 */
+        .stage .cube li:nth-child(6) {
+            transform: translateY(100px) rotateX(-90deg);
+            justify-content: space-between;
+        }
+
+        .stage .cube li:nth-child(6) span:nth-child(2) {
+            align-self: center;
+        }
+
+        .stage .cube li:nth-child(6) span:nth-child(3) {
+            align-self: flex-end;
+        }
+
+        /* 鼠标滑过后的动画 */
+        .stage .cube:hover {
+            transform: rotateX(800deg) rotateY(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <ul class="cube">
+            <li>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+            </li>
+            <li>
+                <div class="col">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="col">
+                    <span></span>
+                </div>
+                <div class="col">
+                    <span></span>
+                    <span></span>
+                </div>
+            </li>
+            <li>
+                <div class="col">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="col">
+                    <span></span>
+                    <span></span>
+                </div>
+            </li>
+            <li>
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
